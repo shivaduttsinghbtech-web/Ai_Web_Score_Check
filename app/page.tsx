@@ -8,8 +8,11 @@ import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Zap, CheckCircle2, AlertCircle, Home } from 'lucide-react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import dynamic from 'next/dynamic'
 
+const HomeChart = dynamic(() => import('@/components/HomeChart'), {
+  ssr: false,
+})
 export default function Home() {
   const router = useRouter()
   const [url, setUrl] = useState('')
